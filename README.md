@@ -83,32 +83,32 @@ this will be an eternally evolving space as i progress through them over time, a
 
 #### Authentication
 
-* [ ] [Alternative Authentication Forms](./Server-Side-Vulns/Authentication/Alternative%20Authentication%20forms.md)
-* [ ] [MFA & 2FA Authentication](./Server-Side-Vulns/Authentication/MFA%20%26%202FA%20Authentication.md)
-* [ ] [Password-based Authentication](./Server-Side-Vulns/Authentication/Password-based%20Authentication.md)
+* [x] [Alternative Authentication Forms](./Server-Side-Vulns/Authentication/Alternative%20Authentication%20forms.md)
+* [x] [MFA & 2FA Authentication](./Server-Side-Vulns/Authentication/MFA%20%26%202FA%20Authentication.md)
+* [x] [Password-based Authentication](./Server-Side-Vulns/Authentication/Password-based%20Authentication.md)
 
 ---
 
 #### File Upload Vulnerabilities
 
-* [ ] [File Upload Vulns](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/File%20Upload%20Vulns.md)
-* [ ] [File Extension Bypass List](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/File%20Extension%20Bypass%20List.md)
-* [ ] [XSS via SVG Upload](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/XSS%20via%20SVG%20upload%20.md)
+* [x] [File Upload Vulns](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/File%20Upload%20Vulns.md)
+* [x] [File Extension Bypass List](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/File%20Extension%20Bypass%20List.md)
+* [x] [XSS via SVG Upload](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/XSS%20via%20SVG%20upload%20.md)
 
 ---
 
 #### SQLi
 
-* [ ] [SQLi](./Server-Side-Vulns/SQLi/SQLi.md)
-* [ ] [Blind SQLi](./Server-Side-Vulns/SQLi/Blind%20SQLi.md)
-* [ ] [UNION Attacks](./Server-Side-Vulns/SQLi/UNION%20Attacks.md)
+* [x] [SQLi](./Server-Side-Vulns/SQLi/SQLi.md)
+* [x] [Blind SQLi](./Server-Side-Vulns/SQLi/Blind%20SQLi.md)
+* [x] [UNION Attacks](./Server-Side-Vulns/SQLi/UNION%20Attacks.md)
 
 ---
 
 #### XXE Injection
 
-* [ ] [XXE Injection](./Server-Side-Vulns/XXE%20Injection/XXE%20Injection.md)
-* [ ] [Blind XXE](./Server-Side-Vulns/XXE%20Injection/Blind%20XXE.md)
+* [x] [XXE Injection](./Server-Side-Vulns/XXE%20Injection/XXE%20Injection.md)
+* [x] [Blind XXE](./Server-Side-Vulns/XXE%20Injection/Blind%20XXE.md)
 
 ---
 ---
@@ -118,9 +118,9 @@ this will be an eternally evolving space as i progress through them over time, a
 #### Authentication Flows
 ##### OAuth
 
-* [ ] [OAuth](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth.md)
-* [ ] [OAuth Flow](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Flow.md)
-* [ ] [OAuth Attacks](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Attacks.md)
+* [x] [OAuth](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth.md)
+* [x] [OAuth Flow](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Flow.md)
+* [x] [OAuth Attacks](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Attacks.md)
 
 ##### OIDC
 
@@ -128,24 +128,24 @@ this will be an eternally evolving space as i progress through them over time, a
 
 ##### SAML
 
-* [ ] [SAML Explained](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Explained.md)
-* [ ] [SAML Attacks](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Attacks.md)
+* [x] [SAML Explained](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Explained.md)
+* [x] [SAML Attacks](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Attacks.md)
 
 ---
 
 #### GraphQL
 
-* [ ] [GraphQL](./Advanced%20Topics/GraphQL/GraphQL.md)
-* [ ] [Exploiting GraphQL](./Advanced%20Topics/GraphQL/Exploiting%20GraphQL.md)
-* [ ] [Further Resources](./Advanced%20Topics/GraphQL/Futher%20Resources.md)
+* [x] [GraphQL](./Advanced%20Topics/GraphQL/GraphQL.md)
+* [x] [Exploiting GraphQL](./Advanced%20Topics/GraphQL/Exploiting%20GraphQL.md)
+* [x] [Further Resources](./Advanced%20Topics/GraphQL/Futher%20Resources.md)
 
 ---
 
 #### HTTP Host Header
 
-* [ ] [HTTP Host Header](./Advanced%20Topics/HTTP%20Host%20Header/HTTP%20Host%20Header.md)
-* [ ] [Finding HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Finding%20HTTP%20Host%20Header%20Vulns.md)
-* [ ] [Exploiting HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Exploiting%20HTTP%20Host%20Header%20Vulns.md)
+* [x] [HTTP Host Header](./Advanced%20Topics/HTTP%20Host%20Header/HTTP%20Host%20Header.md)
+* [x] [Finding HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Finding%20HTTP%20Host%20Header%20Vulns.md)
+* [x] [Exploiting HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Exploiting%20HTTP%20Host%20Header%20Vulns.md)
 
 ---
 
@@ -159,15 +159,15 @@ this will be an eternally evolving space as i progress through them over time, a
 
 #### Server Side Template Injection
 
-* [ ] [Server Side Template Injection](./Advanced%20Topics/Server%20Side%20Template%20Injection/Server%20Side%20Template%20Injection.md)
-* [ ] [Exploiting SSTI](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI.md)
+* [x] [Server Side Template Injection](./Advanced%20Topics/Server%20Side%20Template%20Injection/Server%20Side%20Template%20Injection.md)
+* [x] [Exploiting SSTI](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI.md)
 
 ---
 
 #### Web Cache Poisoning
 
-* [ ] [Web Cache Poisoning](./Advanced%20Topics/Web%20Cache%20Poisoning/Web%20Cache%20Poisoning.md)
-* [ ] [Exploiting Cache Design Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20design%20flaws.md)
+* [x] [Web Cache Poisoning](./Advanced%20Topics/Web%20Cache%20Poisoning/Web%20Cache%20Poisoning.md)
+* [x] [Exploiting Cache Design Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20design%20flaws.md)
 * [ ] [Exploiting Cache Implementation Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20implementation%20flaws.md)
 
 ---
