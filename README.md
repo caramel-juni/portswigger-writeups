@@ -5,73 +5,13 @@ this will be an eternally evolving space as i progress through them over time, a
 
 ---
 
-## completion tree
-
-### "Advanced" Topics
-
-#### Authentication Flows
-##### OAuth
-
-* [ ] [OAuth](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth.md)
-* [ ] [OAuth Flow](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Flow.md)
-* [ ] [OAuth Attacks](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Attacks.md)
-
-##### OIDC
-
-* [ ] [OIDC](./Advanced%20Topics/Authentication%20Flows/OIDC.md)
-
-##### SAML
-
-* [ ] [SAML Explained](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Explained.md)
-* [ ] [SAML Attacks](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Attacks.md)
-
----
-
-#### GraphQL
-
-* [ ] [GraphQL](./Advanced%20Topics/GraphQL/GraphQL.md)
-* [ ] [Exploiting GraphQL](./Advanced%20Topics/GraphQL/Exploiting%20GraphQL.md)
-* [ ] [Further Resources](./Advanced%20Topics/GraphQL/Futher%20Resources.md)
-
----
-
-#### HTTP Host Header
-
-* [ ] [HTTP Host Header](./Advanced%20Topics/HTTP%20Host%20Header/HTTP%20Host%20Header.md)
-* [ ] [Finding HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Finding%20HTTP%20Host%20Header%20Vulns.md)
-* [ ] [Exploiting HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Exploiting%20HTTP%20Host%20Header%20Vulns.md)
-
----
-
-#### HTTP Request Smuggling
-
-* [ ] [HTTP Request Smuggling](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling.md)
-* [ ] [HTTP Request Smuggling Types](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling%20Types.md)
-* [ ] [Using HTTP Request Smuggler Extension](./Advanced%20Topics/HTTP%20Request%20Smuggling/Using%20HTTP%20Request%20Smuggler%20Extension.md)
-
----
-
-#### Server Side Template Injection
-
-* [ ] [Server Side Template Injection](./Advanced%20Topics/Server%20Side%20Template%20Injection/Server%20Side%20Template%20Injection.md)
-* [ ] [Exploiting SSTI](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI.md)
-
----
-
-#### Web Cache Poisoning
-
-* [ ] [Web Cache Poisoning](./Advanced%20Topics/Web%20Cache%20Poisoning/Web%20Cache%20Poisoning.md)
-* [ ] [Exploiting Cache Design Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20design%20flaws.md)
-* [ ] [Exploiting Cache Implementation Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20implementation%20flaws.md)
-
----
----
+## 🌳 completion tree of topics ~ 🌳
 
 
 ### Client-Side-Vulns
 
-* [ ] [CORS](./Client-Side-Vulns/CORS.md)
-* [ ] [DOM based Vulnerabilities](./Client-Side-Vulns/DOM%20based%20Vulnrabilities.md)
+* [x] [CORS](./Client-Side-Vulns/CORS.md)
+* [x] [DOM based Vulnerabilities](./Client-Side-Vulns/DOM%20based%20Vulnrabilities.md)
 * [ ] [JWTs](./Client-Side-Vulns/JWTs.md)
 * [ ] [WebSockets](./Client-Side-Vulns/WebSockets.md)
 
@@ -171,6 +111,66 @@ this will be an eternally evolving space as i progress through them over time, a
 
 * [ ] [XXE Injection](./Server-Side-Vulns/XXE%20Injection/XXE%20Injection.md)
 * [ ] [Blind XXE](./Server-Side-Vulns/XXE%20Injection/Blind%20XXE.md)
+
+---
+---
+
+### "Advanced" Topics
+
+#### Authentication Flows
+##### OAuth
+
+* [ ] [OAuth](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth.md)
+* [ ] [OAuth Flow](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Flow.md)
+* [ ] [OAuth Attacks](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Attacks.md)
+
+##### OIDC
+
+* [ ] [OIDC](./Advanced%20Topics/Authentication%20Flows/OIDC.md)
+
+##### SAML
+
+* [ ] [SAML Explained](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Explained.md)
+* [ ] [SAML Attacks](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Attacks.md)
+
+---
+
+#### GraphQL
+
+* [ ] [GraphQL](./Advanced%20Topics/GraphQL/GraphQL.md)
+* [ ] [Exploiting GraphQL](./Advanced%20Topics/GraphQL/Exploiting%20GraphQL.md)
+* [ ] [Further Resources](./Advanced%20Topics/GraphQL/Futher%20Resources.md)
+
+---
+
+#### HTTP Host Header
+
+* [ ] [HTTP Host Header](./Advanced%20Topics/HTTP%20Host%20Header/HTTP%20Host%20Header.md)
+* [ ] [Finding HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Finding%20HTTP%20Host%20Header%20Vulns.md)
+* [ ] [Exploiting HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Exploiting%20HTTP%20Host%20Header%20Vulns.md)
+
+---
+
+#### HTTP Request Smuggling
+
+* [ ] [HTTP Request Smuggling](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling.md)
+* [ ] [HTTP Request Smuggling Types](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling%20Types.md)
+* [ ] [Using HTTP Request Smuggler Extension](./Advanced%20Topics/HTTP%20Request%20Smuggling/Using%20HTTP%20Request%20Smuggler%20Extension.md)
+
+---
+
+#### Server Side Template Injection
+
+* [ ] [Server Side Template Injection](./Advanced%20Topics/Server%20Side%20Template%20Injection/Server%20Side%20Template%20Injection.md)
+* [ ] [Exploiting SSTI](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI.md)
+
+---
+
+#### Web Cache Poisoning
+
+* [ ] [Web Cache Poisoning](./Advanced%20Topics/Web%20Cache%20Poisoning/Web%20Cache%20Poisoning.md)
+* [ ] [Exploiting Cache Design Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20design%20flaws.md)
+* [ ] [Exploiting Cache Implementation Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20implementation%20flaws.md)
 
 ---
 ---
