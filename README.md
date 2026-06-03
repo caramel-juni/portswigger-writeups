@@ -1,4 +1,4 @@
-# portswigger-writeups
+# portswigger writeups
 here lie all my notes and lab writeups for portswigger's wonderful web security academy!
 
 this will be an eternally evolving space as i progress through them over time, aiming to complete them at some point soon (2026-willing).
