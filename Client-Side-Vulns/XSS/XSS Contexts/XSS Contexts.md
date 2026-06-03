@@ -24,7 +24,7 @@ When input ends up between HTML tags as text must **introduce some new HTML tags
 1. Send query to Intruder, and add variables to test which `tags` (first) and then `attributes` (second) are filtered. E.g.:
    `<TAG %20 ATTRIBUTE=1>`
    ...e.g. resulting in `<body%20onresize=1>`
-   Get these from the [XSS cheat sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet), and click **Copy tags/events to clipboard**. ![](attachments/77554.png)
+   Get these from the [XSS cheat sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet), and click **Copy tags/events to clipboard**. ![](/../attachments/77554.png)
 2. Once identified which `tags`/`attributes` are accepted, filter the [XSS cheat sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet) by them and test various payloads.
 
 ### Using custom tags:
@@ -47,7 +47,7 @@ location = `https://0a7400c10463f01e80adfd31000600f5.web-security-academy.net/?s
 
 ### [Lab](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-some-svg-markup-allowed): SVG tag manipulation
 #svg #animate
-- Test which `tags` + `events` are allowed with intruder, using:   ![](attachments/2860.png)
+- Test which `tags` + `events` are allowed with intruder, using:   ![](../attachments/2860.png)
 - All payloads caused a `400` response, except for the ones using the `<svg>`, `<animatetransform>`, `<title>` & `<image>` tags, and the `onbegin` event. Constructing a payload (using filters on [XSS Cheatsheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)) based on these, yields: `<svg><animatetransform onbegin=alert(1) attributeName=transform>`
 
 ### [Lab:](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-event-handlers-and-href-attributes-blocked) Reflected XSS with event handlers and `href` attributes blocked.
@@ -71,13 +71,13 @@ e.g.
 Needs to be in type: `<a> Click me! </a>`
 
 Will accept nested tags. To write text: `<svg><a><text x=20 y=20>Click me!</text></a></svg>`
-![](attachments/Screenshot%202026-03-25%20at%208.45.47%20pm.png)
+![](../attachments/Screenshot%202026-03-25%20at%208.45.47%20pm.png)
 Now as we can't use `href=""` directly, we need to look for an alternative vector to run javascript when our `<a>` tag is clicked. 
 
 However, the `svg` `<animate>` element is supported (seen through fuzzing), which can **add custom attributes to nested/parent elements**. We can thus use it to add a `href` attribute to the `<a>` tag.
 
 E.g. the below code will add `rx="0;5;0"` as an attribute to `<rect width="10" height="10">`:
-![](attachments/84045.png)
+![](../attachments/84045.png)
 ...Turning it into: 
 `<rect width="10" height="10" rx="0;5;0">`.
 
@@ -90,7 +90,7 @@ Thus, can add the `href` to `<a>` to complete the XSS with:
   </a>
 </svg>
 ```
-![](attachments/38686.png)
+![](../attachments/38686.png)
 
 ---
 
@@ -113,9 +113,9 @@ For example: `" autofocus onfocus=alert(document.domain) x="`
 #### [Lab:](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-attribute-angle-brackets-html-encoded) Reflected XSS into attribute with angle brackets HTML-encoded
 
 WHen inside a tag, like `value="[INPUT HERE]"`:
-![](attachments/64877.png)
+![](../attachments/64877.png)
 ... can break out with `" onmouseover=alert(1)"` or `" autofocus onfocus=alert(document.domain) x="` :
-![](attachments/23185.png)
+![](../attachments/23185.png)
 
 
 
@@ -125,19 +125,19 @@ Sometimes, context of reflected input is **within attributes that can create scr
 
 `<a href="javascript:alert(document.domain)">`
 By entering unique strings into each input box (entry point), can see where they exit within the DOM:
-![](attachments/Screenshot%202026-03-25%20at%209.47.36%20pm.png)
+![](../attachments/Screenshot%202026-03-25%20at%209.47.36%20pm.png)
 Can see that the `Website:` field is injected into the `href="x"` attribute. Can potentially use this to execute `javascript:` pseudo-protocol & perform XSS.
-![](attachments/69054.png)
+![](../attachments/69054.png)
 By submitting the following in the `Website:` input:
 `javascript:alert(document.domain) `
-![](attachments/84091.png)
+![](../attachments/84091.png)
 
 
 ### Lab: [Reflected XSS in canonical link tag](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-canonical-link-tag)
 *NOTE: somewhat obscure, [based on research here](https://portswigger.net/research/xss-in-hidden-input-fields).*
 1. Formulate & **inject arbitrary query strings into the URL**, and **see whether they are reflected into the DOM**, and if so, where. E.g. `https://site.com/?yugdsjhs`
-   Here, it;s reflected into a `canonical` link tag: ![](attachments/94267.png)
-2. Attempt to break out of tag & attempt to insert a new element. However, as this is inside the `<head>` element, we cannot click on this directly, unless we use **access keys** - which will simulate the click with a key combo like `ALT+SHIFT+X`, etc. ![](attachments/Screenshot%202026-03-25%20at%2010.11.15%20pm.png)
+   Here, it;s reflected into a `canonical` link tag: ![](../attachments/94267.png)
+2. Attempt to break out of tag & attempt to insert a new element. However, as this is inside the `<head>` element, we cannot click on this directly, unless we use **access keys** - which will simulate the click with a key combo like `ALT+SHIFT+X`, etc. ![](../attachments/Screenshot%202026-03-25%20at%2010.11.15%20pm.png)
 3. So, to finalise: at end of URL, specify the access key to trigger the event listener with: `...site.net/?'accesskey='x'onclick='alert(1)`
    
 **Note:** Canonical link tags are defined with the [`rel` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel), which **defines the relationship between a linked resource and the current document**. So `rel="canonical"` specifies the preferred URL for the current document.
@@ -170,7 +170,7 @@ var input = 'input-here'
 ```
 Can insert something like the following #payload to break into a new script tag, even when **`'` and `/` are escaped.**:
 - `</script><img src=1 onerror=alert(document.domain)>`
-![](attachments/71694.png)
+![](../attachments/71694.png)
 
 
 ### Breaking out of string literals `x=''`
@@ -179,7 +179,7 @@ Where XSS context is inside a quoted string literal `x=''`, can break out with `
 
 You can inject javascript into a string literal with 
 `' -command- '`, or add another clause with `';command//`.
-![](attachments/41758.png)
+![](../attachments/41758.png)
 **A #payload might be:**
 - `'-alert(document.domain)-'`
 - `' + alert(document.domain) + '`
@@ -198,7 +198,7 @@ However, **developers can forget to escape the backslash itself**, and we can ad
 If there is a difference between backslash numbers, i.e:
 - you input **`\'`**, JS code returns `\\\'`
 ... the application is **escaping backslashes properly**, and likely can't get around it.
-![](attachments/6049.png)
+![](../attachments/6049.png)
 #### TLDR: escaping string literals
 - **A `\` before a character means the subsequent character is treated literally, instead of as a special character.** Use combinations of `'` and `\` to **break escaping techniques** (e.g. sneaking in a `'` by escaping the backslash, with `\'` --> `\\'` )
 
@@ -213,13 +213,13 @@ Could also use `eval` as the exception handler and evaluate passed strings by pr
 
 **Visual Example:**
 e.g. `<script>throw onerror=alert,'some string',123,'haha'</script>`
-![](attachments/53670.png)
-![](attachments/XSS%20Contexts.png)
+![](../attachments/53670.png)
+![](../attachments/XSS%20Contexts.png)
 #payload
 
 #### [Lab:](https://portswigger.net/web-security/cross-site-scripting/contexts/lab-javascript-url-some-characters-blocked) Reflected XSS in a JavaScript URL with some characters blocked
 
-- When changing the `postID`, notice that it is passed directly into the Javascript in the DOM. However, it results in an `Invalid PostID` if it's not a number. Thus, need to add any injected script with the `&` character, specifying a seperate query. ![](attachments/17539.png)
+- When changing the `postID`, notice that it is passed directly into the Javascript in the DOM. However, it results in an `Invalid PostID` if it's not a number. Thus, need to add any injected script with the `&` character, specifying a seperate query. ![](../attachments/17539.png)
 
 **Final payload:**
 ```js
@@ -227,7 +227,7 @@ https://site.net/post?postId=5&'
 },x=x=>{throw/**/onerror=alert,1337},toString=x,window+'',{x:'
 ```
 ... **injects as:**
-![](attachments/20903.png)
+![](../attachments/20903.png)
 
 ``` javascript
 javascript:fetch('/analytics', {method:'post',body:'/post%3fpostId%3d5%26%27},x%3dx%3d%3e{throw/**/onerror%3dalert,1337},toString%3dx,window%2b%27%27,{x%3a%27'}).finally(_ => window.location = '/')
@@ -240,9 +240,9 @@ Can sometimes avoid input filters by `HTML`-encoding specific characters. Browse
 E.g. `&apos;-alert(1)-&apos;` --> `'-alert(1)-'`
 
 - Single quotes are escaped, and properly done (adding one `\` results in `\\\`)
-![](attachments/8721.png)![917](attachments/Screenshot%202026-03-26%20at%208.28.45%20pm.png)
+![](../attachments/8721.png)![917](../attachments/Screenshot%202026-03-26%20at%208.28.45%20pm.png)
 - However, `&apos;` is accepted and decodes to `'`. Thus, can inject something like: `&apos; + alert(1) + &apos;`, --> `' + alert(1) + '`
-![](attachments/67250.png)
+![](../attachments/67250.png)
 
 
 ### XSS in JavaScript template literals
@@ -258,7 +258,7 @@ E.g. `"Hello," + userName + " how are you?"`, can use:
 
 Inside **template literals**, simply use the `${...}` syntax to embed a JavaScript expression, that will be executed when the literal is processed. E.g. a #payload:
 - `${alert(document.domain)}`
-![](attachments/79295.png)
+![](../attachments/79295.png)
 
 ---
 
