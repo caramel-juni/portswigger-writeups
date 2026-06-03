@@ -1,4 +1,4 @@
-# portswigger-writeups
+# portswigger writeups
 here lie all my notes and lab writeups for portswigger's wonderful web security academy!
 
 this will be an eternally evolving space as i progress through them over time, aiming to complete them at some point soon (2026-willing).
@@ -50,9 +50,6 @@ this will be an eternally evolving space as i progress through them over time, a
 
 * [ ] [Server Side Template Injection](./Advanced%20Topics/Server%20Side%20Template%20Injection/Server%20Side%20Template%20Injection.md)
 * [ ] [Exploiting SSTI](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI.md)
-* [ ] [Exploiting SSTI (juni-mac)](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI-juni-mac.md)
-* [ ] [Exploiting SSTI (juni-mac-2)](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI-juni-mac-2.md)
-* [ ] [Exploiting SSTI (juni-mac-3)](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI-juni-mac-3.md)
 
 #### Web Cache Poisoning
 
