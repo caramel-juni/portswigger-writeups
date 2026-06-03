@@ -1,58 +1,173 @@
-
+# portswigger-writeups
 here lie all my notes and lab writeups for portswigger's wonderful web security academy!
 
 this will be an eternally evolving space as i progress through them over time, aiming to complete them at some point soon (2026-willing).
 
-## completion tree:
+---
 
-### client-side vulnerabilities:
-- [ ] JWTs
-- [ ] [XSS](/writeups/burp/client-side/XSS/xss)
-	- [x] [Reflected XSS](/writeups/burp/client-side/xss/reflected-xss)
-	- [x] [Stored XSS](/writeups/burp/client-side/xss/stored-xss)
-	- [x] [Resources & Cheat sheet](/writeups/burp/client-side/xss/cheat-sheet)
-	- [x] CSP
-	- [x] Preventing XSS
-	- [x] [XSS Contexts & Exploits](/writeups/burp/client-side/xss/xss-contexts/xxs/contexts)
-		- [ ] Client-side template injection XSS
-	- [x] [DOM-based XSS](/writeups/burp/client-side/xss/dom-xss/dom-xss)
-		- [x] [Exploiting DOM XSS](/writeups/burp/client-side/xss/dom-xss/exploiting-dom-xss)
-- [ ] DOM-based vulnerabilities
-- [x] Websockets
-- [x] CSRF
-	- [x] Bypass SameSite Cookies
-	- [x] Bypassing CSRF Tokens
-	- [x] Bypassing Referer-based CSRF Defences
-- [x] CORS
-### server-side vulnerabilities:
-- [ ] [Access Control](/writeups/burp/server-side/access-control)
-- [ ] [API Testing](/writeups/burp/server-side/api-testing)
-	- [ ] [API Auth Bypass Testing Methods](/writeups/burp/server-side/api-testing/api-auth-bypass-testing-methods.html)
-	- [ ] [API Basics](/writeups/burp/server-side/api-testing/api-basics)
-		- [ ] [Server-side Parameter Pollution](/writeups/burp/server-side/api-testing/server-side-parameter-pollution)
-			- [ ] [REST API Paths](/writeups/burp/server-side/api-testing/sspp/rest-api-paths)
-			- [ ] [Structured Data](/writeups/burp/server-side/api-testing/sspp/structured-data)
-- [ ] Authentication
-	- [ ] [Alternative Authentication forms](/writeups/burp/server-side/authentication/alternative-authentication-forms)
-	- [ ] [Authentication](/writeups/burp/server-side/authentication/authentication)
-	- [ ] [MFA & 2FA Authentication](/writeups/burp/server-side/authentication/mfa-and-2fa-authentication)
-	- [ ] [Password-based Authentication](/writeups/burp/server-side/authentication/password-based-authentication)
-- [ ] [Base HTML Tag Injection](/writeups/burp/server-side/base-html-tag-injection)
-- [ ] [Business Logic Vulnerabilities](/writeups/burp/server-side/business-logic-vulnerabilities)
-- [ ] [File Upload Vulnerabilities](/writeups/burp/server-side/file-upload-vulnerabilities)
-- [ ] [File Extension Bypass List](/writeups/burp/server-side/file-upload-vulnerabilities/file-extension-bypass-list)
-- [ ] [File Upload Vulns](/writeups/burp/server-side/file-upload-vulnerabilities/file-upload-vulns)
-- [ ] [XSS via SVG upload](/writeups/burp/server-side/file-upload-vulnerabilities/xss-via-svg-upload)
-- [ ] [HTTP Method Override Checks](/writeups/burp/server-side/http-method-override-checks)
-- [ ] [OS Command or Shell Injection](/writeups/burp/server-side/os-command-or-shell-injection)
-- [ ] [Path Traversal](/writeups/burp/server-side/path-traversal)
-- [ ] [SQLi](/writeups/burp/server-side/sqli)
-	- [ ] [Blind SQLi](/writeups/burp/server-side/sqli/blind-sqli)
-	- [ ] [SQLi](/writeups/burp/server-side/sqli/sqli)  
-	- [ ] [UNION Attacks](/writeups/burp/server-side/sqli/union-attacks)  
-- [ ] [SSRF (Server Side Request Forgery)](/writeups/burp/server-side/ssrf-server-side-request-forgery)  
-- [ ] [Testing MFA](/writeups/burp/server-side/testing-mfa)  
-- [ ] [XXE Injection](/writeups/burp/server-side/xxe-injection)
-	- [ ] [Blind XXE](/writeups/burp/server-side/xxe-injection/blind-xxe)
-	- [ ] [XXE Injection](/writeups/burp/server-side/xxe-injection/xxe-injection)
-### advanced topics:
+## completion tree
+
+### Advanced Topics
+
+* [ ] [Advanced Topics](./Advanced%20Topics/Advanced%20Topics.md)
+
+#### Authentication Flows
+
+##### OAuth
+
+* [ ] [OAuth](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth.md)
+* [ ] [OAuth Flow](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Flow.md)
+* [ ] [OAuth Attacks](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Attacks.md)
+
+##### OIDC
+
+* [ ] [OIDC](./Advanced%20Topics/Authentication%20Flows/OIDC.md)
+
+##### SAML
+
+* [ ] [SAML Explained](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Explained.md)
+* [ ] [SAML Attacks](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Attacks.md)
+
+#### GraphQL
+
+* [ ] [GraphQL](./Advanced%20Topics/GraphQL/GraphQL.md)
+* [ ] [Exploiting GraphQL](./Advanced%20Topics/GraphQL/Exploiting%20GraphQL.md)
+* [ ] [Further Resources](./Advanced%20Topics/GraphQL/Futher%20Resources.md)
+
+#### HTTP Host Header
+
+* [ ] [HTTP Host Header](./Advanced%20Topics/HTTP%20Host%20Header/HTTP%20Host%20Header.md)
+* [ ] [Finding HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Finding%20HTTP%20Host%20Header%20Vulns.md)
+* [ ] [Exploiting HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Exploiting%20HTTP%20Host%20Header%20Vulns.md)
+
+#### HTTP Request Smuggling
+
+* [ ] [HTTP Request Smuggling](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling.md)
+* [ ] [HTTP Request Smuggling Types](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling%20Types.md)
+* [ ] [Using HTTP Request Smuggler Extension](./Advanced%20Topics/HTTP%20Request%20Smuggling/Using%20HTTP%20Request%20Smuggler%20Extension.md)
+
+#### Server Side Template Injection
+
+* [ ] [Server Side Template Injection](./Advanced%20Topics/Server%20Side%20Template%20Injection/Server%20Side%20Template%20Injection.md)
+* [ ] [Exploiting SSTI](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI.md)
+* [ ] [Exploiting SSTI (juni-mac)](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI-juni-mac.md)
+* [ ] [Exploiting SSTI (juni-mac-2)](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI-juni-mac-2.md)
+* [ ] [Exploiting SSTI (juni-mac-3)](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI-juni-mac-3.md)
+
+#### Web Cache Poisoning
+
+* [ ] [Web Cache Poisoning](./Advanced%20Topics/Web%20Cache%20Poisoning/Web%20Cache%20Poisoning.md)
+* [ ] [Exploiting Cache Design Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20design%20flaws.md)
+* [ ] [Exploiting Cache Implementation Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20implementation%20flaws.md)
+
+---
+
+### Client-Side-Vulns
+
+* [ ] [Client-Side Vulns](./Client-Side-Vulns/Client-Side%20Vulns.md)
+* [ ] [CORS](./Client-Side-Vulns/CORS.md)
+* [ ] [DOM based Vulnerabilities](./Client-Side-Vulns/DOM%20based%20Vulnrabilities.md)
+* [ ] [JWTs](./Client-Side-Vulns/JWTs.md)
+* [ ] [WebSockets](./Client-Side-Vulns/WebSockets.md)
+
+#### CSRF
+
+* [ ] [CSRF](./Client-Side-Vulns/CSRF/CSRF.md)
+* [ ] [Bypassing CSRF Tokens](./Client-Side-Vulns/CSRF/Bypassing%20CSRF%20Tokens.md)
+* [ ] [Bypassing Referer-based CSRF Defences](./Client-Side-Vulns/CSRF/Bypassing%20Referer-based%20CSRF%20Defences.md)
+* [ ] [Bypass SameSite Cookie Restrictions](./Client-Side-Vulns/CSRF/Bypass%20SameSite%20cookie%20restrictions.md)
+
+#### XSS
+
+* [ ] [XSS](./Client-Side-Vulns/XSS/XSS.md)
+* [ ] [CSP](./Client-Side-Vulns/XSS/CSP.md)
+* [ ] [Preventing XSS](./Client-Side-Vulns/XSS/Preventing%20XSS.md)
+* [ ] [Reflected XSS](./Client-Side-Vulns/XSS/Reflected%20XSS.md)
+* [ ] [Stored XSS](./Client-Side-Vulns/XSS/Stored%20XSS.md)
+* [ ] [Resources & Cheat Sheets](./Client-Side-Vulns/XSS/Resources%20%26%20Cheat%20sheets.md)
+
+##### DOM-based XSS
+
+* [ ] [DOM-based XSS](./Client-Side-Vulns/XSS/DOM-based%20XSS/DOM-based%20XSS.md)
+* [ ] [Exploiting DOM XSS](./Client-Side-Vulns/XSS/DOM-based%20XSS/Exploiting%20DOM%20XSS.md)
+
+##### XSS Contexts
+
+* [ ] [XSS Contexts](./Client-Side-Vulns/XSS/XSS%20Contexts/XSS%20Contexts.md)
+* [ ] [Client-side Template Injection XSS](./Client-Side-Vulns/XSS/XSS%20Contexts/Client-side%20template%20injection%20XSS.md)
+
+---
+
+### Server-Side-Vulns
+
+* [ ] [Server-Side Vulns](./Server-Side-Vulns/Server-Side%20Vulns.md)
+* [ ] [Base HTML Tag Injection](./Server-Side-Vulns/Base%20HTML%20Tag%20Injection.md)
+* [ ] [Business Logic Vulnerabilities](./Server-Side-Vulns/Business%20Logic%20Vulnerabilities.md)
+* [ ] [HTTP Method Override Checks](./Server-Side-Vulns/HTTP%20Method%20Override%20Checks.md)
+* [ ] [OS Command or Shell Injection](./Server-Side-Vulns/OS%20Command%20or%20Shell%20Injection.md)
+* [ ] [Path Traversal](./Server-Side-Vulns/Path%20Traversal.md)
+* [ ] [SSRF (Server Side Request Forgery)](./Server-Side-Vulns/SSRF%20%28Server%20Side%20Request%20Forgery%29.md)
+* [ ] [Testing MFA](./Server-Side-Vulns/Testing%20MFA.md)
+
+#### Access Control
+
+* [ ] [Access Control](./Server-Side-Vulns/Access%20Control/Access%20Control.md)
+
+#### API Testing
+
+* [ ] [API Testing](./Server-Side-Vulns/API%20Testing/API%20Testing.md)
+* [ ] [API Basics](./Server-Side-Vulns/API%20Testing/API%20Basics.md)
+* [ ] [API Auth Bypass Testing Methods](./Server-Side-Vulns/API%20Testing/API%20Auth%20Bypass%20Testing%20Methods.html)
+
+##### Server-side Parameter Pollution
+
+* [ ] [Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/Server-side%20Parameter%20Pollution.md)
+* [ ] [(API) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28API%29%20Server-side%20parameter%20pollution%20.md)
+* [ ] [(REST API Paths) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28REST%20API%20Paths%29%20Server-side%20parameter%20pollution.md)
+* [ ] [(Structured Data) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28Structured%20Data%29%20Server-side%20parameter%20pollution.md)
+
+#### Authentication
+
+* [ ] [Authentication](./Server-Side-Vulns/Authentication/Authentication.md)
+* [ ] [Alternative Authentication Forms](./Server-Side-Vulns/Authentication/Alternative%20Authentication%20forms.md)
+* [ ] [MFA & 2FA Authentication](./Server-Side-Vulns/Authentication/MFA%20%26%202FA%20Authentication.md)
+* [ ] [Password-based Authentication](./Server-Side-Vulns/Authentication/Password-based%20Authentication.md)
+
+#### File Upload Vulnerabilities
+
+* [ ] [File Upload Vulns](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/File%20Upload%20Vulns.md)
+* [ ] [File Extension Bypass List](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/File%20Extension%20Bypass%20List.md)
+* [ ] [XSS via SVG Upload](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/XSS%20via%20SVG%20upload%20.md)
+
+#### SQLi
+
+* [ ] [SQLi](./Server-Side-Vulns/SQLi/SQLi.md)
+* [ ] [Blind SQLi](./Server-Side-Vulns/SQLi/Blind%20SQLi.md)
+* [ ] [UNION Attacks](./Server-Side-Vulns/SQLi/UNION%20Attacks.md)
+
+#### XXE Injection
+
+* [ ] [XXE Injection](./Server-Side-Vulns/XXE%20Injection/XXE%20Injection.md)
+* [ ] [Blind XXE](./Server-Side-Vulns/XXE%20Injection/Blind%20XXE.md)
+
+---
+
+## progress
+
+this repo grows whenever i complete a lab, discover something interesting, or forget the same payload for the bajillionth time.
+there may be (quite a few) obsidian-based artifacts left over, as this is a copy of my notes in obsidian. i am yet to fix (a lot) of image links.
+eventually i'd like to add:
+
+* lab references for every topic
+* methodology checklists
+* payload collections
+* quick-reference cheat sheets
+* cross-links between related vulnerabilities
+
+---
+
+## disclaimer
+
+all notes are for educational purposes and are based primarily on portswigger academy content, supplemented by personal notes and lab writeups.
+
+_only test systems you own or have explicit permission to assess pls_
