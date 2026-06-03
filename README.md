@@ -13,36 +13,36 @@ this will be an eternally evolving space as i progress through them over time, a
 * [x] [CORS](./Client-Side-Vulns/CORS.md)
 * [x] [DOM based Vulnerabilities](./Client-Side-Vulns/DOM%20based%20Vulnrabilities.md)
 * [ ] [JWTs](./Client-Side-Vulns/JWTs.md)
-* [ ] [WebSockets](./Client-Side-Vulns/WebSockets.md)
+* [x] [WebSockets](./Client-Side-Vulns/WebSockets.md)
 
 ---
 
 #### CSRF
 
-* [ ] [CSRF](./Client-Side-Vulns/CSRF/CSRF.md)
-* [ ] [Bypassing CSRF Tokens](./Client-Side-Vulns/CSRF/Bypassing%20CSRF%20Tokens.md)
-* [ ] [Bypassing Referer-based CSRF Defences](./Client-Side-Vulns/CSRF/Bypassing%20Referer-based%20CSRF%20Defences.md)
-* [ ] [Bypass SameSite Cookie Restrictions](./Client-Side-Vulns/CSRF/Bypass%20SameSite%20cookie%20restrictions.md)
+* [x] [CSRF](./Client-Side-Vulns/CSRF/CSRF.md)
+* [x] [Bypassing CSRF Tokens](./Client-Side-Vulns/CSRF/Bypassing%20CSRF%20Tokens.md)
+* [x] [Bypassing Referer-based CSRF Defences](./Client-Side-Vulns/CSRF/Bypassing%20Referer-based%20CSRF%20Defences.md)
+* [x] [Bypass SameSite Cookie Restrictions](./Client-Side-Vulns/CSRF/Bypass%20SameSite%20cookie%20restrictions.md)
 
 ---
 
 #### XSS
 
-* [ ] [XSS](./Client-Side-Vulns/XSS/XSS.md)
-* [ ] [CSP](./Client-Side-Vulns/XSS/CSP.md)
+* [x] [XSS](./Client-Side-Vulns/XSS/XSS.md)
+* [x] [CSP](./Client-Side-Vulns/XSS/CSP.md)
 * [ ] [Preventing XSS](./Client-Side-Vulns/XSS/Preventing%20XSS.md)
-* [ ] [Reflected XSS](./Client-Side-Vulns/XSS/Reflected%20XSS.md)
-* [ ] [Stored XSS](./Client-Side-Vulns/XSS/Stored%20XSS.md)
-* [ ] [Resources & Cheat Sheets](./Client-Side-Vulns/XSS/Resources%20%26%20Cheat%20sheets.md)
+* [x] [Reflected XSS](./Client-Side-Vulns/XSS/Reflected%20XSS.md)
+* [x] [Stored XSS](./Client-Side-Vulns/XSS/Stored%20XSS.md)
+* [x] [Resources & Cheat Sheets](./Client-Side-Vulns/XSS/Resources%20%26%20Cheat%20sheets.md)
 
 ##### DOM-based XSS
 
-* [ ] [DOM-based XSS](./Client-Side-Vulns/XSS/DOM-based%20XSS/DOM-based%20XSS.md)
+* [x] [DOM-based XSS](./Client-Side-Vulns/XSS/DOM-based%20XSS/DOM-based%20XSS.md)
 * [ ] [Exploiting DOM XSS](./Client-Side-Vulns/XSS/DOM-based%20XSS/Exploiting%20DOM%20XSS.md)
 
 ##### XSS Contexts
 
-* [ ] [XSS Contexts](./Client-Side-Vulns/XSS/XSS%20Contexts/XSS%20Contexts.md)
+* [x] [XSS Contexts](./Client-Side-Vulns/XSS/XSS%20Contexts/XSS%20Contexts.md)
 * [ ] [Client-side Template Injection XSS](./Client-Side-Vulns/XSS/XSS%20Contexts/Client-side%20template%20injection%20XSS.md)
 
 ---
@@ -51,14 +51,13 @@ this will be an eternally evolving space as i progress through them over time, a
 
 ## Server-Side-Vulns
 
-* [ ] [Server-Side Vulns](./Server-Side-Vulns/Server-Side%20Vulns.md)
-* [ ] [Base HTML Tag Injection](./Server-Side-Vulns/Base%20HTML%20Tag%20Injection.md)
-* [ ] [Business Logic Vulnerabilities](./Server-Side-Vulns/Business%20Logic%20Vulnerabilities.md)
-* [ ] [HTTP Method Override Checks](./Server-Side-Vulns/HTTP%20Method%20Override%20Checks.md)
-* [ ] [OS Command or Shell Injection](./Server-Side-Vulns/OS%20Command%20or%20Shell%20Injection.md)
-* [ ] [Path Traversal](./Server-Side-Vulns/Path%20Traversal.md)
-* [ ] [SSRF (Server Side Request Forgery)](./Server-Side-Vulns/SSRF%20%28Server%20Side%20Request%20Forgery%29.md)
-* [ ] [Testing MFA](./Server-Side-Vulns/Testing%20MFA.md)
+* [x] [Base HTML Tag Injection](./Server-Side-Vulns/Base%20HTML%20Tag%20Injection.md)
+* [x] [Business Logic Vulnerabilities](./Server-Side-Vulns/Business%20Logic%20Vulnerabilities.md)
+* [x] [HTTP Method Override Checks](./Server-Side-Vulns/HTTP%20Method%20Override%20Checks.md)
+* [x] [OS Command or Shell Injection](./Server-Side-Vulns/OS%20Command%20or%20Shell%20Injection.md)
+* [x] [Path Traversal](./Server-Side-Vulns/Path%20Traversal.md)
+* [x] [SSRF (Server Side Request Forgery)](./Server-Side-Vulns/SSRF%20%28Server%20Side%20Request%20Forgery%29.md)
+* [x] [Testing MFA](./Server-Side-Vulns/Testing%20MFA.md)
 
 ---
 
@@ -70,21 +69,20 @@ this will be an eternally evolving space as i progress through them over time, a
 
 ### API Testing
 
-* [ ] [API Basics](./Server-Side-Vulns/API%20Testing/API%20Basics.md)
-* [ ] [API Auth Bypass Testing Methods](./Server-Side-Vulns/API%20Testing/API%20Auth%20Bypass%20Testing%20Methods.html)
+* [x] [API Basics](./Server-Side-Vulns/API%20Testing/API%20Basics.md)
+* [x] [API Auth Bypass Testing Methods](./Server-Side-Vulns/API%20Testing/API%20Auth%20Bypass%20Testing%20Methods.html)
 
 #### Server-side Parameter Pollution
 
-* [ ] [Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/Server-side%20Parameter%20Pollution.md)
-* [ ] [(API) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28API%29%20Server-side%20parameter%20pollution%20.md)
-* [ ] [(REST API Paths) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28REST%20API%20Paths%29%20Server-side%20parameter%20pollution.md)
-* [ ] [(Structured Data) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28Structured%20Data%29%20Server-side%20parameter%20pollution.md)
+* [x] [Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/Server-side%20Parameter%20Pollution.md)
+* [x] [(API) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28API%29%20Server-side%20parameter%20pollution%20.md)
+* [x] [(REST API Paths) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28REST%20API%20Paths%29%20Server-side%20parameter%20pollution.md)
+* [x] [(Structured Data) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28Structured%20Data%29%20Server-side%20parameter%20pollution.md)
 
 ---
 
 #### Authentication
 
-* [ ] [Authentication](./Server-Side-Vulns/Authentication/Authentication.md)
 * [ ] [Alternative Authentication Forms](./Server-Side-Vulns/Authentication/Alternative%20Authentication%20forms.md)
 * [ ] [MFA & 2FA Authentication](./Server-Side-Vulns/Authentication/MFA%20%26%202FA%20Authentication.md)
 * [ ] [Password-based Authentication](./Server-Side-Vulns/Authentication/Password-based%20Authentication.md)
