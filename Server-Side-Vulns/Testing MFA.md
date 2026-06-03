@@ -1,0 +1,3 @@
+- Methodology/Checklist for testing MFA - [OWASP Github](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/04-Authentication_Testing/11-Testing_Multi-Factor_Authentication.md)
+- Bypassing 2FA - [Hacktricks](https://book.hacktricks.wiki/en/pentesting-web/2fa-bypass.html)
+- 

