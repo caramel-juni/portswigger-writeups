@@ -7,12 +7,9 @@ this will be an eternally evolving space as i progress through them over time, a
 
 ## completion tree
 
-### Advanced Topics
-
-* [ ] [Advanced Topics](./Advanced%20Topics/Advanced%20Topics.md)
+### "Advanced" Topics
 
 #### Authentication Flows
-
 ##### OAuth
 
 * [ ] [OAuth](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth.md)
@@ -28,11 +25,15 @@ this will be an eternally evolving space as i progress through them over time, a
 * [ ] [SAML Explained](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Explained.md)
 * [ ] [SAML Attacks](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Attacks.md)
 
+---
+
 #### GraphQL
 
 * [ ] [GraphQL](./Advanced%20Topics/GraphQL/GraphQL.md)
 * [ ] [Exploiting GraphQL](./Advanced%20Topics/GraphQL/Exploiting%20GraphQL.md)
 * [ ] [Further Resources](./Advanced%20Topics/GraphQL/Futher%20Resources.md)
+
+---
 
 #### HTTP Host Header
 
@@ -40,16 +41,22 @@ this will be an eternally evolving space as i progress through them over time, a
 * [ ] [Finding HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Finding%20HTTP%20Host%20Header%20Vulns.md)
 * [ ] [Exploiting HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Exploiting%20HTTP%20Host%20Header%20Vulns.md)
 
+---
+
 #### HTTP Request Smuggling
 
 * [ ] [HTTP Request Smuggling](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling.md)
 * [ ] [HTTP Request Smuggling Types](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling%20Types.md)
 * [ ] [Using HTTP Request Smuggler Extension](./Advanced%20Topics/HTTP%20Request%20Smuggling/Using%20HTTP%20Request%20Smuggler%20Extension.md)
 
+---
+
 #### Server Side Template Injection
 
 * [ ] [Server Side Template Injection](./Advanced%20Topics/Server%20Side%20Template%20Injection/Server%20Side%20Template%20Injection.md)
 * [ ] [Exploiting SSTI](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI.md)
+
+---
 
 #### Web Cache Poisoning
 
@@ -58,14 +65,17 @@ this will be an eternally evolving space as i progress through them over time, a
 * [ ] [Exploiting Cache Implementation Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20implementation%20flaws.md)
 
 ---
+---
+
 
 ### Client-Side-Vulns
 
-* [ ] [Client-Side Vulns](./Client-Side-Vulns/Client-Side%20Vulns.md)
 * [ ] [CORS](./Client-Side-Vulns/CORS.md)
 * [ ] [DOM based Vulnerabilities](./Client-Side-Vulns/DOM%20based%20Vulnrabilities.md)
 * [ ] [JWTs](./Client-Side-Vulns/JWTs.md)
 * [ ] [WebSockets](./Client-Side-Vulns/WebSockets.md)
+
+---
 
 #### CSRF
 
@@ -73,6 +83,8 @@ this will be an eternally evolving space as i progress through them over time, a
 * [ ] [Bypassing CSRF Tokens](./Client-Side-Vulns/CSRF/Bypassing%20CSRF%20Tokens.md)
 * [ ] [Bypassing Referer-based CSRF Defences](./Client-Side-Vulns/CSRF/Bypassing%20Referer-based%20CSRF%20Defences.md)
 * [ ] [Bypass SameSite Cookie Restrictions](./Client-Side-Vulns/CSRF/Bypass%20SameSite%20cookie%20restrictions.md)
+
+---
 
 #### XSS
 
@@ -94,8 +106,10 @@ this will be an eternally evolving space as i progress through them over time, a
 * [ ] [Client-side Template Injection XSS](./Client-Side-Vulns/XSS/XSS%20Contexts/Client-side%20template%20injection%20XSS.md)
 
 ---
+---
 
-### Server-Side-Vulns
+
+## Server-Side-Vulns
 
 * [ ] [Server-Side Vulns](./Server-Side-Vulns/Server-Side%20Vulns.md)
 * [ ] [Base HTML Tag Injection](./Server-Side-Vulns/Base%20HTML%20Tag%20Injection.md)
@@ -106,22 +120,27 @@ this will be an eternally evolving space as i progress through them over time, a
 * [ ] [SSRF (Server Side Request Forgery)](./Server-Side-Vulns/SSRF%20%28Server%20Side%20Request%20Forgery%29.md)
 * [ ] [Testing MFA](./Server-Side-Vulns/Testing%20MFA.md)
 
+---
+
 #### Access Control
 
 * [ ] [Access Control](./Server-Side-Vulns/Access%20Control/Access%20Control.md)
 
-#### API Testing
+---
 
-* [ ] [API Testing](./Server-Side-Vulns/API%20Testing/API%20Testing.md)
+### API Testing
+
 * [ ] [API Basics](./Server-Side-Vulns/API%20Testing/API%20Basics.md)
 * [ ] [API Auth Bypass Testing Methods](./Server-Side-Vulns/API%20Testing/API%20Auth%20Bypass%20Testing%20Methods.html)
 
-##### Server-side Parameter Pollution
+#### Server-side Parameter Pollution
 
 * [ ] [Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/Server-side%20Parameter%20Pollution.md)
 * [ ] [(API) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28API%29%20Server-side%20parameter%20pollution%20.md)
 * [ ] [(REST API Paths) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28REST%20API%20Paths%29%20Server-side%20parameter%20pollution.md)
 * [ ] [(Structured Data) Server-side Parameter Pollution](./Server-Side-Vulns/API%20Testing/Server-side%20Parameter%20Pollution/%28Structured%20Data%29%20Server-side%20parameter%20pollution.md)
+
+---
 
 #### Authentication
 
@@ -130,11 +149,15 @@ this will be an eternally evolving space as i progress through them over time, a
 * [ ] [MFA & 2FA Authentication](./Server-Side-Vulns/Authentication/MFA%20%26%202FA%20Authentication.md)
 * [ ] [Password-based Authentication](./Server-Side-Vulns/Authentication/Password-based%20Authentication.md)
 
+---
+
 #### File Upload Vulnerabilities
 
 * [ ] [File Upload Vulns](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/File%20Upload%20Vulns.md)
 * [ ] [File Extension Bypass List](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/File%20Extension%20Bypass%20List.md)
 * [ ] [XSS via SVG Upload](./Server-Side-Vulns/File%20Upload%20Vulnerabilities/XSS%20via%20SVG%20upload%20.md)
+
+---
 
 #### SQLi
 
@@ -142,12 +165,16 @@ this will be an eternally evolving space as i progress through them over time, a
 * [ ] [Blind SQLi](./Server-Side-Vulns/SQLi/Blind%20SQLi.md)
 * [ ] [UNION Attacks](./Server-Side-Vulns/SQLi/UNION%20Attacks.md)
 
+---
+
 #### XXE Injection
 
 * [ ] [XXE Injection](./Server-Side-Vulns/XXE%20Injection/XXE%20Injection.md)
 * [ ] [Blind XXE](./Server-Side-Vulns/XXE%20Injection/Blind%20XXE.md)
 
 ---
+---
+
 
 ## progress
 
