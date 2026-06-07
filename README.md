@@ -58,6 +58,7 @@ this will be an eternally evolving space as i progress through them over time, a
 * [x] [Path Traversal](./Server-Side-Vulns/Path%20Traversal.md)
 * [x] [SSRF (Server Side Request Forgery)](./Server-Side-Vulns/SSRF%20%28Server%20Side%20Request%20Forgery%29.md)
 * [x] [Testing MFA](./Server-Side-Vulns/Testing%20MFA.md)
+* [x] [Information disclosure vulnerabilities](./Server-Side-Vulns/Information%20disclosure%20vulnerabilities.md)
 
 ---
 
@@ -154,6 +155,14 @@ this will be an eternally evolving space as i progress through them over time, a
 * [ ] [HTTP Request Smuggling](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling.md)
 * [ ] [HTTP Request Smuggling Types](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling%20Types.md)
 * [ ] [Using HTTP Request Smuggler Extension](./Advanced%20Topics/HTTP%20Request%20Smuggling/Using%20HTTP%20Request%20Smuggler%20Extension.md)
+
+---
+
+#### Insecure Deserialization
+
+* [ ] [Insecure Deserialization](./Advanced%20Topics/Insecure%20Deserialization/Insecure%20Deserialization.md)
+* [ ] [Identifying insecure deserialization](./Advanced%20Topics/Insecure%20Deserialization/Identifying%20insecure%20deserialization.md)
+* [ ] [Exploiting insecure deserialization](./Advanced%20Topics/Insecure%20Deserialization/Exploiting%20insecure%20deserialization.md)
 
 ---
 
