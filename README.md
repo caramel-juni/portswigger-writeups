@@ -161,8 +161,7 @@ this will be an eternally evolving space as i progress through them over time, a
 #### Insecure Deserialization
 
 * [ ] [Insecure Deserialization](./Advanced%20Topics/Insecure%20Deserialization/Insecure%20Deserialization.md)
-* [ ] [Identifying insecure deserialization](./Advanced%20Topics/Insecure%20Deserialization/Identifying%20insecure%20deserialization.md)
-* [ ] [Exploiting insecure deserialization](./Advanced%20Topics/Insecure%20Deserialization/Exploiting%20insecure%20deserialization.md)
+* [ ] [Identifying & Exploiting Insecure Deserialization](./Advanced%20Topics/Insecure%20Deserialization/Identifying%20&%20Exploiting%20Insecure%20Deserialization.md)
 
 ---
 

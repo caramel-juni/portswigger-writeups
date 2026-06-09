@@ -36,7 +36,7 @@ sticker: emoji//2705
 #### Changing request to expose source code:
 As most code is executed server side with the output sent to the browser, can't always access **raw code-based contents** of files as text (e.g. `home.php`). **However**, when files are beign edited, **temporary backup files** are often generated, often denoted by appending a tilde (`~` or `.`) to the filename or using a different extension (`.tmp`). 
 Search for **variations of the target filename** (targeting it to the specific language/framework as well), like:
-- `~home.php`
+- `home.php~`
 - `.home.php`
 - `home.tmp`
 

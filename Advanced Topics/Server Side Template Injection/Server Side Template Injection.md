@@ -1,3 +1,6 @@
+---
+sticker: emoji//2705
+---
 ### What is SSTI?
 #ssti #not-sti
 **Server Side Template Injection:** Where user input is **directly** passed into server-side templates, instead of being sanitised and treated as data. This allows adversaries to inject **payloads inside server-side template syntax** to execute commands server-side. 
