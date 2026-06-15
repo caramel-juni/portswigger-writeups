@@ -1,3 +1,6 @@
+---
+sticker: emoji//2705
+---
 ## What is serialization?
 The process of **converting complex data structures** (e.g. objects & their properties) into a **flatter format**, to be **transferred as a series of bytes**. The state of the object & its attributes are preserved, allowing for it to be **sent over a network/API call/between application components**, **processed in memory**, written to a **file** or a **database**.
  - **ALL attributes** are serialised **apart from any private fields, if marked as `transient`**.

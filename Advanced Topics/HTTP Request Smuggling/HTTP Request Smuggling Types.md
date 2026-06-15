@@ -131,7 +131,7 @@ x=1
 - https://www.youtube.com/watch?v=9YvZvuoNp8g
 - https://www.youtube.com/watch?v=kIRIV-BwBTE
 
-==UPDATE== Just use [HTTP Request Smuggler Extension](Using%20HTTP%20Request%20Smuggler%20Extension.md) and its inbuilt TE.CL tester, after converting to chunked encoding!
+*UPDATE: Just use [HTTP Request Smuggler Extension](Using%20HTTP%20Request%20Smuggler%20Extension.md) and its inbuilt `TE.CL` tester, after converting to chunked encoding!*
 
 ---
 
@@ -171,38 +171,5 @@ We can try various ways of obfuscating the headers, which is what the lab sugges
 ![](attachments/19125.png)
 
 *Can likely also determine this via the HTTP request smuggler scan.*
-
-
----
-### Detection techniques
-
-
-
-#### Timing technique
-#### Setup:
-- Show non-printable characters -> `ON`
-- Update Content-Length automatically -> `OFF`
-- Switch to HTTP 1.1
-- Send a sanity check `POST` to base endpoint `/`
-
-From: https://youtu.be/4S5fkKJ4SM4
-![](attachments/Screenshot%202026-05-14%20at%201.18.03%20am.png)
-
-``` http
-POST / HTTP/1.1
-Content-Length: 6 
-Transfer-Encoding: chunked
-
-3
-abc
-
-X
-
-```
-- `Content-Length: 6`: indicates to frontend server that if it *is* using CL, request ends after `abc`
-- `3`: using `Transfer-Encoding: chunked`, with a chunk of size `3` bytes (`\r\n 3`)
-- `X\r\n`: Will **get dropped by front-end server** (as uses `CL` that ends after `6` bytes, aka after `abc`), and then request sent to backend server has **no terminating chunk value of `0` and will thus hang indefinitely.**
-
-![](attachments/Screenshot%202026-05-14%20at%201.23.33%20am.png)
 
 

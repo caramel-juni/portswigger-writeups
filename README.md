@@ -1,7 +1,7 @@
 # portswigger writeups
 here lie all my notes and lab writeups for portswigger's wonderful web security academy!
 
-this will be an eternally evolving space as i progress through them over time, aiming to complete them at some point soon (2026-willing).
+this will be an eternally evolving space as i progress through them over time, aiming to complete them at some point soon (*2026-be-willing*).
 
 ---
 
@@ -12,13 +12,12 @@ this will be an eternally evolving space as i progress through them over time, a
 
 * [x] [CORS](./Client-Side-Vulns/CORS.md)
 * [x] [DOM based Vulnerabilities](./Client-Side-Vulns/DOM%20based%20Vulnrabilities.md)
-* [ ] [JWTs](./Client-Side-Vulns/JWTs.md)
 * [x] [WebSockets](./Client-Side-Vulns/WebSockets.md)
+* [ ] Clickjacking
 
 ---
 
 #### CSRF
-
 * [x] [CSRF](./Client-Side-Vulns/CSRF/CSRF.md)
 * [x] [Bypassing CSRF Tokens](./Client-Side-Vulns/CSRF/Bypassing%20CSRF%20Tokens.md)
 * [x] [Bypassing Referer-based CSRF Defences](./Client-Side-Vulns/CSRF/Bypassing%20Referer-based%20CSRF%20Defences.md)
@@ -27,10 +26,8 @@ this will be an eternally evolving space as i progress through them over time, a
 ---
 
 #### XSS
-
 * [x] [XSS](./Client-Side-Vulns/XSS/XSS.md)
 * [x] [CSP](./Client-Side-Vulns/XSS/CSP.md)
-* [ ] [Preventing XSS](./Client-Side-Vulns/XSS/Preventing%20XSS.md)
 * [x] [Reflected XSS](./Client-Side-Vulns/XSS/Reflected%20XSS.md)
 * [x] [Stored XSS](./Client-Side-Vulns/XSS/Stored%20XSS.md)
 * [x] [Resources & Cheat Sheets](./Client-Side-Vulns/XSS/Resources%20%26%20Cheat%20sheets.md)
@@ -48,7 +45,6 @@ this will be an eternally evolving space as i progress through them over time, a
 ---
 ---
 
-
 ## Server-Side-Vulns
 
 * [x] [Base HTML Tag Injection](./Server-Side-Vulns/Base%20HTML%20Tag%20Injection.md)
@@ -64,7 +60,7 @@ this will be an eternally evolving space as i progress through them over time, a
 
 #### Access Control
 
-* [ ] [Access Control](./Server-Side-Vulns/Access%20Control/Access%20Control.md)
+* [ ] [Access Control](./Server-Side-Vulns/Access%20Control/Access%20Control.md) \**(not fully written up, but done)*
 
 ---
 
@@ -118,24 +114,20 @@ this will be an eternally evolving space as i progress through them over time, a
 
 #### Authentication Flows
 ##### OAuth
-
 * [x] [OAuth](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth.md)
 * [x] [OAuth Flow](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Flow.md)
 * [x] [OAuth Attacks](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Attacks.md)
 
 ##### OIDC
-
 * [ ] [OIDC](./Advanced%20Topics/Authentication%20Flows/OIDC.md)
 
 ##### SAML
-
 * [x] [SAML Explained](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Explained.md)
 * [x] [SAML Attacks](./Advanced%20Topics/Authentication%20Flows/SAML/SAML%20Attacks.md)
 
 ---
 
 #### GraphQL
-
 * [x] [GraphQL](./Advanced%20Topics/GraphQL/GraphQL.md)
 * [x] [Exploiting GraphQL](./Advanced%20Topics/GraphQL/Exploiting%20GraphQL.md)
 * [x] [Further Resources](./Advanced%20Topics/GraphQL/Futher%20Resources.md)
@@ -143,7 +135,6 @@ this will be an eternally evolving space as i progress through them over time, a
 ---
 
 #### HTTP Host Header
-
 * [x] [HTTP Host Header](./Advanced%20Topics/HTTP%20Host%20Header/HTTP%20Host%20Header.md)
 * [x] [Finding HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Finding%20HTTP%20Host%20Header%20Vulns.md)
 * [x] [Exploiting HTTP Host Header Vulnerabilities](./Advanced%20Topics/HTTP%20Host%20Header/Exploiting%20HTTP%20Host%20Header%20Vulns.md)
@@ -151,22 +142,37 @@ this will be an eternally evolving space as i progress through them over time, a
 ---
 
 #### HTTP Request Smuggling
-
-* [ ] [HTTP Request Smuggling](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling.md)
 * [ ] [HTTP Request Smuggling Types](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling%20Types.md)
-* [ ] [Using HTTP Request Smuggler Extension](./Advanced%20Topics/HTTP%20Request%20Smuggling/Using%20HTTP%20Request%20Smuggler%20Extension.md)
+* [x] [Identifying & Detecting HTTP Request Smuggling](./Advanced%20Topics/HTTP%20Request%20Smuggling/Identifying%20&%20Detecting%20HTTP%20Request%20Smuggling.md)
+* [ ] [Exploiting HTTP Request Smuggling Vulnerabilities](./Advanced%20Topics/HTTP%20Request%20Smuggling/Exploiting%20HTTP%20request%20smuggling%20vulnerabilities.md)
+* [x] [Using HTTP Request Smuggler Extension](./Advanced%20Topics/HTTP%20Request%20Smuggling/Using%20HTTP%20Request%20Smuggler%20Extension.md)
 
 ---
 
 #### Insecure Deserialization
-
-* [ ] [Insecure Deserialization](./Advanced%20Topics/Insecure%20Deserialization/Insecure%20Deserialization.md)
-* [ ] [Identifying & Exploiting Insecure Deserialization](./Advanced%20Topics/Insecure%20Deserialization/Identifying%20&%20Exploiting%20Insecure%20Deserialization.md)
+* [x] [Insecure Deserialization](./Advanced%20Topics/Insecure%20Deserialization/Insecure%20Deserialization.md)
+* [x] [Identifying & Exploiting Insecure Deserialization](./Advanced%20Topics/Insecure%20Deserialization/Identifying%20&%20Exploiting%20Insecure%20Deserialization.md)
 
 ---
+#### JSON Web Tokens (JWTs)
+- [x] [JWTs](./Advanced%20Topics/JWTs/JWTs.md)
+- [x] [Attacking JWTs](./Advanced%20Topics/JWTs/Attacking%20JWTs.md)
 
+
+---
+#### Essential Skills
+*`null`*
+
+---
+#### Prototype pollution
+*`null`*
+
+---
+#### Race conditions
+*`null`*
+
+---
 #### Server Side Template Injection
-
 * [x] [Server Side Template Injection](./Advanced%20Topics/Server%20Side%20Template%20Injection/Server%20Side%20Template%20Injection.md)
 * [x] [Exploiting SSTI](./Advanced%20Topics/Server%20Side%20Template%20Injection/Exploiting%20SSTI.md)
 
@@ -177,6 +183,14 @@ this will be an eternally evolving space as i progress through them over time, a
 * [x] [Web Cache Poisoning](./Advanced%20Topics/Web%20Cache%20Poisoning/Web%20Cache%20Poisoning.md)
 * [x] [Exploiting Cache Design Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20design%20flaws.md)
 * [ ] [Exploiting Cache Implementation Flaws](./Advanced%20Topics/Web%20Cache%20Poisoning/Exploiting%20cache%20implementation%20flaws.md)
+
+---
+#### Web cache deception
+*`null`*
+
+---
+#### Web LLM attacks
+*`null`*
 
 ---
 ---
