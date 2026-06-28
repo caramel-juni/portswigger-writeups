@@ -18,6 +18,8 @@ Identify query parameters/database operations, and spray/inject with known paylo
 - Refer to [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet) on specific syntax
 - https://www.invicti.com/blog/web-security/sql-injection-cheat-sheet
 - https://github.com/payloadbox/sql-injection-payload-list
+- #BlindSQLi - [DNS-based Blind SQLi exfiltration attack](https://www.ryanwendel.com/2020/02/20/dns-exfiltration-thru-blind-sql-injection-in-a-mssql-environment/)
+- #BlindSQLi - [OOB SQLi Cheatsheet](https://notsosecure.com/out-band-exploitation-oob-cheatsheet)
 
 ---
 

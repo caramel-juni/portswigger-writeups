@@ -91,10 +91,10 @@ Can try and cause an interaction with an OOB server you control, like collaborat
 ## Ways of injecting OS commands
 These all have different semantics/meanings, and may help with OOB detection based on conditions - see [here.](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Command%20Injection/README.md#chaining-commands)
 
-| Windows & Linux | Unix-only                                |
-| --------------- | ---------------------------------------- |
-| &, &&, \|, \|\| | `;`, Newline (`0x0a` or `\n`)            |
-|                 | Injected commands:<br>`injected-command` |
-|                 | `$(injected-command)`                    |
+| Windows & Linux | Unix-only                                    |
+| --------------- | -------------------------------------------- |
+| &, &&, \|, \|\| | `;`, Newline (`0x0a` or `\n`)                |
+|                 | Injected commands:<br>\` injected-command \` |
+|                 | `$(injected-command)`                        |
 
 If the input appears **within a quoted string**, may need to **terminate the quoted context (using `"` or `'`)** before performing command injection.

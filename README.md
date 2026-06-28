@@ -13,7 +13,7 @@ this will be an eternally evolving space as i progress through them over time, a
 * [x] [CORS](./Client-Side-Vulns/CORS.md)
 * [x] [DOM based Vulnerabilities](./Client-Side-Vulns/DOM%20based%20Vulnrabilities.md)
 * [x] [WebSockets](./Client-Side-Vulns/WebSockets.md)
-* [ ] Clickjacking
+* [x] [Clickjacking](./Client-Side-Vulns/Clickjacking)
 
 ---
 
@@ -35,7 +35,8 @@ this will be an eternally evolving space as i progress through them over time, a
 ##### DOM-based XSS
 
 * [x] [DOM-based XSS](./Client-Side-Vulns/XSS/DOM-based%20XSS/DOM-based%20XSS.md)
-* [ ] [Exploiting DOM XSS](./Client-Side-Vulns/XSS/DOM-based%20XSS/Exploiting%20DOM%20XSS.md)
+* [x] [Exploiting DOM XSS](./Client-Side-Vulns/XSS/DOM-based%20XSS/Exploiting%20DOM%20XSS.md)
+* [ ] DOM-based vulnerabilities
 
 ##### XSS Contexts
 
@@ -116,7 +117,7 @@ this will be an eternally evolving space as i progress through them over time, a
 ##### OAuth
 * [x] [OAuth](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth.md)
 * [x] [OAuth Flow](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Flow.md)
-* [x] [OAuth Attacks](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Attacks.md)
+* [ ] [OAuth Attacks](./Advanced%20Topics/Authentication%20Flows/OAuth/OAuth%20Attacks.md)
 
 ##### OIDC
 * [ ] [OIDC](./Advanced%20Topics/Authentication%20Flows/OIDC.md)
@@ -144,8 +145,9 @@ this will be an eternally evolving space as i progress through them over time, a
 #### HTTP Request Smuggling
 * [ ] [HTTP Request Smuggling Types](./Advanced%20Topics/HTTP%20Request%20Smuggling/HTTP%20Request%20Smuggling%20Types.md)
 * [x] [Identifying & Detecting HTTP Request Smuggling](./Advanced%20Topics/HTTP%20Request%20Smuggling/Identifying%20&%20Detecting%20HTTP%20Request%20Smuggling.md)
-* [ ] [Exploiting HTTP Request Smuggling Vulnerabilities](./Advanced%20Topics/HTTP%20Request%20Smuggling/Exploiting%20HTTP%20request%20smuggling%20vulnerabilities.md)
+* [x] [Exploiting HTTP Request Smuggling Vulnerabilities](./Advanced%20Topics/HTTP%20Request%20Smuggling/Exploiting%20HTTP%20request%20smuggling%20vulnerabilities.md)
 * [x] [Using HTTP Request Smuggler Extension](./Advanced%20Topics/HTTP%20Request%20Smuggling/Using%20HTTP%20Request%20Smuggler%20Extension.md)
+* [ ] [Advanced HTTP Request Smuggling](./Advanced%20Topics/HTTP%20Request%20Smuggling/Advanced%20Request%20Smuggling%20-%20HTTP2%20Attacks.md)
 
 ---
 
@@ -190,7 +192,7 @@ this will be an eternally evolving space as i progress through them over time, a
 
 ---
 #### Web LLM attacks
-*`null`*
+* [x] [Web LLM Attacks](./Advanced%20Topics/Web%20LLM%20Attacks.md)
 
 ---
 ---
